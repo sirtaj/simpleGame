@@ -38,6 +38,7 @@ function Sprite(scene, imageFile, width, height){
   this.camera = false;
   this.visible = true;
   this.boundAction = WRAP;
+  this.opacity = 1.0
   
   this.changeImage = function(imgFile){
     this.image.src = imgFile;
@@ -83,6 +84,7 @@ function Sprite(scene, imageFile, width, height){
       //transform element
       ctx.translate(this.x, this.y);
       ctx.rotate(this.imgAngle);
+      ctx.globalAlpha = this.opacity
       
       //draw image with center on origin
 	if( this.animation != false ){
